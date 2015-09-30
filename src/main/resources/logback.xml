@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <contextName>hpp-sdk-demo-java</contextName>
+
+    <appender name="console" class="ch.qos.logback.core.ConsoleAppender">
+        <encoder>
+            <pattern>%date{HH:mm:ss.SSS} %contextName [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <!-- project default level -->
+    <logger name="com.huipengpay" level="${rootLevel:-DEBUG}"/>
+
+    <root level="WARN">
+        <appender-ref ref="console"/>
+    </root>
+</configuration>
