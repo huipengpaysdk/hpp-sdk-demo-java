@@ -11,7 +11,16 @@ import javax.servlet.http.HttpServletRequest;
 public abstract class BaseServlet extends HttpServlet {
 
     protected static final Logger LOGGER = LoggerFactory.getLogger(BaseServlet.class);
-    protected HppPayService payService = new HppPayService();
+    private static HppPayService payService;
+
+    protected HppPayService getPayService() {
+
+        if (payService == null) {
+            payService = new HppPayService();
+        }
+
+        return payService;
+    }
 
     /**
      * 获取/url/:id中的id

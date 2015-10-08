@@ -36,7 +36,7 @@ public class PayServlet extends BaseServlet {
         order.setReturnUrl("http://127.0.0.1:8080/callback/return/" + orderNumber);
 
         LOGGER.warn("商户订单[{}]签名完成,开始使用proxy进行请求输出", orderNumber);
-        PayResponse payResponse = payService.startPay(order.createPayRequest());
+        PayResponse payResponse = getPayService().startPay(order.createPayRequest());
         order.setResponseData(payResponse);
         Repository.save(order);
 

@@ -31,7 +31,7 @@ import java.util.Map;
 public class HppHttpClient {
     private static final int TIMEOUT_SECONDS = 20;//默认超时时间
     private static final int POOL_SIZE = 20;//http池
-    private static Logger logger = LoggerFactory.getLogger(HppHttpClient.class);
+    private static final Logger LOGGER = LoggerFactory.getLogger(HppHttpClient.class);
     private static CloseableHttpClient httpClient;
     private static ErrorResponseHandler errorHandler;
     private static volatile HppHttpClient sInstance;
@@ -40,7 +40,7 @@ public class HppHttpClient {
         try {
             init();
         } catch (GeneralSecurityException e) {
-            logger.error("Huipeng Pay SDK INIT error:" + e.getLocalizedMessage());
+            LOGGER.error("Huipeng Pay SDK INIT error:" + e.getLocalizedMessage());
             e.printStackTrace();
         }
     }
@@ -110,7 +110,7 @@ public class HppHttpClient {
             return executor.execute(request).handleResponse(errorHandler);
         } catch (Exception ex) {
             String msg = String.format("请求[%s]发生错误[%s][%s]", url, ex.getClass(), ex.getLocalizedMessage());
-            logger.error(msg);
+            LOGGER.error(msg);
 
             throw new ServiceException(msg);
         }
@@ -149,7 +149,7 @@ public class HppHttpClient {
         try {
             httpClient.close();
         } catch (IOException e) {
-            logger.error("释放HttpClient资源失败:", e);
+            LOGGER.error("释放HttpClient资源失败:", e);
         }
     }
 }

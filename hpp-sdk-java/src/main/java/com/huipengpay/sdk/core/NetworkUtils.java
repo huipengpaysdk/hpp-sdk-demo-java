@@ -8,7 +8,6 @@ import java.net.UnknownHostException;
 
 public class NetworkUtils {
 
-
     public static String getRequestRealIp(HttpServletRequest request) {
         String realIp = request.getRemoteAddr();
         if (request.getHeader("x-forwarded-for") != null) {

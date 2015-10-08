@@ -4,6 +4,7 @@ import com.huipengpay.sdk.core.AES;
 import org.testng.annotations.Test;
 
 public class AesTest {
+
     @Test
     public void testEncrypt() throws Exception {
         String key = "1rJTjxpz+L7oWOLYUeDCdg==";

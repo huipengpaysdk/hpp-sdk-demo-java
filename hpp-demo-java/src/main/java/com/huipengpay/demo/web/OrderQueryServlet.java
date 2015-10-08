@@ -34,7 +34,7 @@ public class OrderQueryServlet extends BaseServlet {
         }
 
         OrderQueryRequest request = new OrderQueryRequest(order.getResponseData().getTradeSn());
-        OrderQueryResponse response = payService.startOrderQuery(request);
+        OrderQueryResponse response = getPayService().startOrderQuery(request);
         order.setStatus(response.getStatus());
         Repository.save(order);
 
