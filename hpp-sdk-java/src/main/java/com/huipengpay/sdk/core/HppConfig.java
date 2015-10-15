@@ -15,8 +15,15 @@ public final class HppConfig {
 
     //PC网关支付路径
     //订单查询路径
-    public static final String URL_PC_GATEWAY_PAY = "https://cashier.huipengpay.com/api/v1/pay";
-    public static final String URL_ORDER_QUERY = "https://cashier.huipengpay.com/api/v1/order-query";
+    //正式地址
+//    public static final String URL_PC_GATEWAY_PAY = "https://cashier.huipengpay.com/api/v1/pay";
+//    public static final String URL_ORDER_QUERY = "https://cashier.huipengpay.com/api/v1/order-query";
+
+    //内测地址
+    public static final String URL_PC_GATEWAY_PAY = "http://cashiertest.huipengpay.com/api/v1/pay";
+    public static final String URL_ORDER_QUERY = "http://cashiertest.huipengpay.com/api/v1/order-query";
+
+
 
     public static final String PASSPORT_KEY = "Hl0kp77WbCF8m0dF+IzOsQ==";//加密私钥
     public static final String PASSPORT_NUMBER = "HPPPN20157083500001";//商户号
