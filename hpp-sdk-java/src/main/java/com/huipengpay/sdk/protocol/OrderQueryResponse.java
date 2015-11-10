@@ -8,6 +8,9 @@ import java.util.Date;
  */
 public final class OrderQueryResponse extends BaseHppResponse {
 
+    public OrderQueryResponse() {
+    }
+
     private String appId;
     private String orderNumber;//商户订单号
     private String tradeSn;//hpp流水号

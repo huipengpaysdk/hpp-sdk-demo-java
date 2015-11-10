@@ -8,6 +8,8 @@ import org.hibernate.validator.constraints.SafeHtml;
  */
 public final class OrderQueryRequest extends BaseApiRequest {
 
+    public OrderQueryRequest() {}
+
     @NotBlank
     @SafeHtml
     private String tradeSn;

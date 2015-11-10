@@ -11,6 +11,9 @@ import java.util.Map;
  */
 public final class TradeSuccessEvent extends BaseHppResponse {
 
+    public TradeSuccessEvent() {
+    }
+
     private BigDecimal amount; //交易金额(单位为分)
     private String appId; //应用id
     private Date payAt; //支付时间

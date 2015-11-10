@@ -15,6 +15,8 @@ import java.util.Map;
  */
 public final class PayRequest extends BaseApiRequest {
 
+    public PayRequest() {}
+
     @NotBlank
     @SafeHtml
     private String appId; //应用id

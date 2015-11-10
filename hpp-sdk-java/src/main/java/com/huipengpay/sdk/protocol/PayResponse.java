@@ -10,6 +10,9 @@ import java.util.Map;
  */
 public final class PayResponse extends BaseHppResponse {
 
+    public PayResponse() {
+    }
+
     private String rawHtml;//带输出的pc跳转网关
     private String preChargeTicket;//预支付凭证
 
