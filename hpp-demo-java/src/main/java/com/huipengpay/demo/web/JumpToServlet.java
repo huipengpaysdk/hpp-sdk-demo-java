@@ -27,12 +27,12 @@ public class JumpToServlet extends BaseServlet {
         Order order = Repository.find(orderNumber);
 
         RequestDispatcher dispatcher;
-        if (StringUtils.equals(order.getPayInterface(), "UNIONPAY_WEB")) {
-            req.setAttribute("rawHtml", order.getResponseData().getRawHtml());
-            dispatcher = req.getRequestDispatcher("/form-proxy.jsp");
-        } else {
+        if (StringUtils.equals(order.getPayInterface(), "WEIXIN_NATIVE")) {
             req.setAttribute("code_url", order.getResponseData().getWXQRPayUrl());
             dispatcher = req.getRequestDispatcher("/barcode-proxy.jsp");
+        } else {
+            req.setAttribute("rawHtml", order.getResponseData().getRawHtml());
+            dispatcher = req.getRequestDispatcher("/form-proxy.jsp");
         }
 
         dispatcher.forward(req, resp);
