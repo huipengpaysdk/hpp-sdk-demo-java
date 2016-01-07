@@ -164,13 +164,13 @@
                 <snapshotRepository>
                     <id>hpp-snapshots</id>
                     <name>HuiPengPay Snapshots Repository</name>
-                    <url>http://192.168.1.53:8081/nexus/content/repositories/snapshots/</url>
+                    <url>http://192.168.1.53:8081/content/repositories/snapshots/</url>
                 </snapshotRepository>
                 <!-- 配置release版本发布的仓库-->
                 <repository>
                     <id>hpp-releases</id>
                     <name>HuiPengPay Releases Repository</name>
-                    <url>http://192.168.1.53:8081/nexus/content/repositories/releases/</url>
+                    <url>http://192.168.1.53:8081/content/repositories/releases/</url>
                 </repository>
             </distributionManagement>
         </profile>
