@@ -41,6 +41,6 @@ public class PayServlet extends BaseServlet {
         Repository.save(order);
 
         resp.setContentType("application/json; charset=UTF-8");
-        resp.getWriter().write(JSON.toJSONString(ImmutableMap.of("orderNumber", orderNumber)));
+        resp.getWriter().write(JSON.toJSONString(ImmutableMap.of("orderNumber", orderNumber,"extra",payResponse.getExtra())));
     }
 }
